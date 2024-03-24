@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Layout, Row, Col } from 'antd';
-import Navbar from './Components/Navbar';
-import CustomFooter from './Components/Footer';
+import Navbar from './Components/Navbar/Index';
+import CustomFooter from './Components/CustomFooter/Index';
 import NewsCard from './Components/NewsCard';
 import NotFoundPage from './Components/NotFoundPage';
 import "antd/dist/reset.css";
