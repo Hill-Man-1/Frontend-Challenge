@@ -31,13 +31,19 @@ const NewsCard: React.FC<NewsCardProps> = ({ articles, sort }) => {
 
   useEffect(() => {
     setLoading(true);
-    if (sort === 'newest') {
-      setSortedArticles([...articles].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()));
+    if (Array.isArray(articles) && articles.length > 0) {
+      const sorted: NewsArticle[] = [...articles].sort((a: NewsArticle, b: NewsArticle) => {
+        const dateA: number = new Date(a.publishedAt).getTime();
+        const dateB: number = new Date(b.publishedAt).getTime();
+        return sort === 'newest' ? dateB - dateA : dateA - dateB;
+      });
+      setSortedArticles(sorted);
     } else {
-      setSortedArticles([...articles].sort((a, b) => new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime()));
+      setSortedArticles([]);
     }
     setTimeout(() => setLoading(false), 2000);
   }, [articles, sort]);
+  
 
   useEffect(() => {
     const handleScroll = () => {

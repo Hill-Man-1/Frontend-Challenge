@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     const fetchNews = async () => {
       const apiKey = '8ce755751a95422e97dbf85466de0a04'; 
-      const url = `https://newsapi.org/v2/everything?q=tesla&from=2024-02-23&sortBy=publishedAt&apiKey=${apiKey}`;
+      const url = `https://newsapi.org/v2/everything?q=tesla&from=2024-02-24&sortBy=publishedAt&apiKey=${apiKey}`;
       try {
         const response = await fetch(url);
         const data = await response.json();
