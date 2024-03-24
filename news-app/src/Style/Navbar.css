@@ -1,0 +1,36 @@
+.navbar {
+    height: 70px;
+    font-size: 25px;
+    background-color: #00000b; /* Background color for the navbar */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar.show {
+    display: flex; /* Show the navbar when the 'show' class is applied */
+}
+
+.navbar.hide {
+    display: none; /* Hide the navbar when the 'hide' class is applied */
+}
+
+.logo-global {
+    width: 50px;
+    height: 50px;
+}
+
+.sort-button {
+    border-color: white; /* Set the border color */
+    background-color: transparent; /* Remove background color */
+    box-shadow: none; /* Remove box shadow */
+    color: white; /* Set text color to match border color */
+}
+
+.sort-button:hover,
+.sort-button:focus {
+    border-color: #1890ff; /* Change border color on hover/focus */
+    color: #1890ff; /* Change text color on hover/focus */
+}
